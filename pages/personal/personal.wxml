@@ -1,0 +1,39 @@
+<view style="background:#eee;height:100vh">
+  <view class="back"></view>
+  <view class="content">
+    <view class="top">
+      <image src="{{image}}"></image>
+      <view>{{userName}}</view>
+      <view>{{user.userName}}</view>
+    </view>
+    <view class="bottom">
+    <view class="mode" bindtap="message">
+      <view class="mode_left">
+        <van-icon name="/images/all/xx.png"  size="42rpx" info="{{message}}"/>
+        <text style="margin-left:40rpx">消息中心</text>
+      </view>
+      <image src="/images/right.png"></image>
+    </view>
+      <view class="mode" bindtap="person">
+        <view class="mode_left">
+          <image src="/images/all/grxx.png"></image>
+          <text>个人信息</text>
+        </view>
+        <image src="/images/right.png"></image>
+      </view>
+      <view class="mode" bindtap="help">
+        <view class="mode_left" >
+          <image src="/images/all/bz.png"></image>
+          <text>帮助中心</text>
+        </view>
+        <image src="/images/right.png"></image>
+      </view>
+      <view class="last">
+        <view class="mode_left">
+          <image src="/images/all/kf.png"></image>
+          <text bindtap="call">客服电话: {{servePhone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

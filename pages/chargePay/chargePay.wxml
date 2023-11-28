@@ -1,0 +1,38 @@
+<view class="mode" style="border-bottom:1px solid #e5e5e5">
+  <text style="margin-right:24rpx">车库名称</text><text>{{carBarnName}}</text>
+</view>
+<view class="mode" wx:if="{{type == 1}}">
+  <text style="margin-right:88rpx">计费</text><text>{{money}}元/小时</text>
+</view>
+<view class="mode">
+  <text style="margin-right:24rpx">充电终端</text><text>{{deviceSn}}号 </text>
+</view>
+<view class="body">
+<view class="tip">请选择充电终端端口</view>
+  <view wx:if="{{port == ''}}" style="margin-top:10rpx;">正在加载中。。。</view>
+  <view wx:else class="btns" style="justify-content: left">
+    <view wx:for="{{port}}"  wx:key="j" class="{{port_id == index? 'select' : 'uselect'}}" bindtap="select_port" data-id="{{index}}" style="margin: 20rpx 10rpx 26rpx 0">端口{{item.port + 1}}</view>
+</view >
+  <view class="tip" wx:if="{{type == 1}}">请选择充电时长</view>
+  <view class="btns" wx:if="{{type == 1}}">
+    <view wx:for="{{time}}" wx:key="i" class="{{id == index? 'select' : 'uselect'}}" bindtap="select" data-id="{{index}}">{{item}}小时</view>
+  </view>
+</view>
+<view class="pay_detail" >
+  <text class="pay_money" wx:if="{{type == 1}}">支付：<text>{{payMoney}}</text>元</text>
+</view>
+<view class="bottom_tip" wx:if="{{type == 1}}">请合理选择充电时长，已缴费用不退不补，且不支持延长充电时间，请勿重复缴费！</view>
+<view class="bottom_tip" wx:else>请仔细核对充电端口是否正确！</view>
+<view class="pay">
+  <view bindtap="pay" wx:if="{{type == 1}}">确认支付</view>
+  <view bindtap="confirm" wx:else>确认</view>
+</view>
+<!-- 遮罩层 -->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="block_title">请确认充电器已连接好，并在听到语音提示后再缴费开启充电！若未搜索到端口，请更换终端进行充电！</view>
+      <view class="block_btn">我知道啦</view>
+    </view>
+  </view>
+</van-overlay>

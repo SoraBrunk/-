@@ -1,0 +1,3 @@
+<!--pages/charging/charging.wxml-->
+<text>pages/charging/charging.wxml</text>
+<canvas id="canvas" type="2d"></canvas>

@@ -1,0 +1,38 @@
+<!--pages/photo/photo.wxml-->
+<view id="content" style="background:#fff">
+  <view class="tip">上传ic卡背面照片以识别卡号:</view>
+  <view bindtap="img" class="button" style="margin-top:100rpx">开始识别</view>
+  <!-- <view>开始识别</view> -->
+  <view style="margin:40rpx 0 25vh">
+    <view class="tip" style="margin-top:100rpx">您的卡号为：</view>
+    <view class="card">
+      <view class="cardNum">{{cardNum}}</view>
+      <view class="reset" wx:if="{{cardNum !== '未识别'}}" bindtap="open">修改</view>
+    </view>
+  </view>
+</view>
+  <view style="text-align:center;color:#f00;margin-top:40rpx">提示：请仔细核对卡号后进行绑定</view>
+  <view class="{{buttonStyle}}" bindtap="next">立即绑定</view>
+
+<van-toast id="van-toast" />
+<van-dialog
+  use-slot
+  title="修改卡号"
+  show="{{ show }}"
+  show-cancel-button
+  bind:cancel="onClose"
+  bind:confirm="onChange"
+>
+  <van-cell-group>
+    <van-field
+      model:value="{{ reset }}"
+      placeholder="请输入卡号"
+      border="{{ false }}"
+      size="large"
+      input-align="center"
+      type="number"
+      auto-focus
+      maxlength= "12"
+    />
+  </van-cell-group>
+</van-dialog>

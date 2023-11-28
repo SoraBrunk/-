@@ -1,0 +1,154 @@
+
+.content {
+  margin-top: 20rpx;
+}
+
+.mod {
+  padding: 32rpx 36rpx 32rpx 36rpx;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+}
+
+.mod text {
+  color: rgba(16, 16, 16, 1);
+  font-size: 30rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.refund {
+  padding: 32rpx 36rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refund text {
+  color: #4880FF;
+  font-size: 30rpx;
+  font-family: PingFangSC-regular;
+}
+
+.refund view {
+  width: 60px;
+  height: 30px;
+  border-radius: 8rpx;
+  background-color: rgba(72, 128, 255, 1);
+  box-shadow: 2px 2px 7px 0px rgba(213, 213, 213, 0);
+  border: 1px solid rgba(213, 213, 213, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(251, 251, 251, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+  font-weight: 800
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 480rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 1);
+  padding: 50rpx 56rpx 44rpx;
+}
+
+.tip_pic {
+  width: 98rpx;
+  height: 98rpx;
+  margin: 0 auto;
+}
+
+.tip_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.tip_txt {
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+  margin-top: 32rpx
+}
+
+.tip_btn {
+  margin-top: 36rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.tip_btn view {
+  width: 218rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+}
+
+.tip_btn view:first-child {
+  background: #BBBBBB;
+}
+
+.tip_btn view:last-child {
+  background: #4880FF;
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+}
+.pay view {
+  width: 60px;
+  height: 30px;
+  border-radius: 8rpx;
+  background-color: rgba(72, 128, 255, 1);
+  box-shadow: 2px 2px 7px 0px rgba(213, 213, 213, 0);
+  border: 1px solid rgba(213, 213, 213, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(251, 251, 251, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+  font-weight: 800;
+}
+
+.showMoney {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectMonth {
+  display: flex;
+  align-items: center;
+}
+
+.selectMonth image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 10rpx;
+}
+
+.money {
+  margin-top: 50rpx;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 60rpx;
+}

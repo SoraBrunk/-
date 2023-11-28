@@ -1,0 +1,6 @@
+function pay(e){
+  var money = e.toFixed(2)
+  return money
+}
+
+module.exports.pay = pay

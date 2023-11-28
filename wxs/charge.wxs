@@ -1,0 +1,11 @@
+function time(e) {
+  var hour = e.toFixed(1)
+  return hour
+}
+
+function num(e) {
+  var process =  parseFloat(e.toFixed(2)) * 100
+  return process
+}
+
+module.exports = {time:time , num:num}

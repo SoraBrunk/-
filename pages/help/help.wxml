@@ -1,0 +1,17 @@
+<view class="back">
+  <view id="tip">操作指南</view>
+  <view class="content_back">
+    <view class="content" bindtap="select" data-id="c1">
+      <text>用户注册</text>
+      <image src="/images/right.png"></image>
+    </view>
+    <view class="content" bindtap="select" data-id="c2">
+      <text>用户停车</text>
+      <image src="/images/right.png"></image>
+    </view>
+    <view class="content" bindtap="select" data-id="c3">
+      <text>用户充电</text>
+      <image src="/images/right.png"></image>
+    </view>
+  </view>
+</view>

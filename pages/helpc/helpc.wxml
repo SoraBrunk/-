@@ -1,0 +1,95 @@
+<!--pages/helpc/helpc.wxml-->
+<scroll-view style="height:{{height}}px" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+  <view class="tip">大象车库用户操作指南</view>
+  <view class="content" id="c1">
+    <view class="title1">一、新用户注册</view>
+    <view>1、打开手机微信“扫一扫”，扫描车库入口处二维码，进入大象车库小程序。</view>
+    <image src="/images/help/4.jpg"></image>
+    <image src="/images/help/5.jpg"></image>
+    <view>2、点击“确定”进入注册信息填写页面。</view>
+    <view>3、填写个人信息并进行手机验证。</view>
+    <image src="/images/help/6.jpg"></image>
+    <view>4、授权获取昵称、头像、地区及性别；点击相机按钮拍摄并上传正面自拍照，点击完成即可完成用户注册。</view>
+    <image src="/images/help/7.jpg"></image>
+    <image src="/images/help/8.jpg"></image>
+    <image src="/images/help/9.jpg"></image>
+  </view>
+  <view class="content" id="c2">
+    <view class="title1">二、付费停车</view>
+    <view>停车付费分为临停缴费、包月（不含充电）和包月（含充电）三种类型。</view>
+    <text class="title2">1、临停缴费</text>
+    <view>不同车辆类型临停的单价也各不相同，临停缴费需要一次性缴纳押金，单次停车费用在押金内扣除，出门扫码后即可退卡并退还剩余金额，也可以在“我的卡片”栏目下，点击相应卡片，在详情页面退卡。</view>
+    <text class="title2" style="color:#f00">临停计时计费规则：</text>
+    <view style="color:#f00">临停卡单次使用完成后，若无需再次进入请选择退卡，若不退卡系统将按照每天/次相应金额扣除，扣完为止（没有停车行为也将按天数扣除相应费用）。</view>
+    <image src="/images/help/12.jpg"></image>
+    <image src="/images/help/2.jpg"></image>
+    <text class="title2">2、包月缴费（不含充电）</text>
+    <view>包月缴费（不含充电）是指只办理包月停车业务，自行车、摩托车车主可直接选择此项进行月卡办理，电动车用户如果选择包月缴费（不含充电），则车库内部进行充电时需要单独缴纳充电费用。</view>
+    <view style="color:#f00">注：</view>
+    <view style="color:#f00">· 月卡的单个月份天数为30天（包含节假日）。</view>
+    <view style="color:#f00">· 月卡办理后不予办理退卡退费。</view>
+    <image src="/images/help/10.jpg"></image>
+    <image src="/images/help/13.jpg"></image>
+    <image src="/images/help/3.jpg"></image>
+    <text class="title2">3、包月缴费（含充电）</text>
+    <view>包月缴费（含充电）是指只同时办理包月停车业务和包月充电业务，电动车、老年电动车和电动三轮车用户可直接选择该项业务，车库内部进行充电时无需单独缴纳充电费用。</view>
+    <view style="color:#f00">注：</view>
+    <view style="color:#f00">· 停车月卡的单个月份天数为30天（包含节假日）。</view>
+    <view style="color:#f00">· 充电月卡充电次数为38次。</view>
+    <view style="color:#f00">· 充电前需扫码选择充电端口，无需付费。</view>
+    <view style="color:#f00">· 月卡办理后不予办理退卡退费。</view>
+    <image src="/images/help/11.jpg"></image>
+    <image src="/images/help/14.jpg"></image>
+  </view>
+  <view class="content" id="c3">
+    <view class="title1">三、充电</view>
+    <view>充电用户分为临停缴费用户、包月（不含充电）用户和包月（含充电）用户三种类型。临停缴费用户、包月（不含充电）用户充电时需要单独缴纳充电费用，包月（含充电）用户只需要扫码选择充电端口，无需付费。</view>
+    <text class="title2">充电步骤</text>
+    <view>1、首先将电动车电源线连接插座。</view>
+    <view>2、待已连接插座的二维码变亮时，打开微信“扫一扫”，扫描二维码，选择对应充电端口、充电时长并支付费用开始充电。</view>
+    <view>3、插座充电指示灯变为绿色时，充电完成，可拔出电源插头。</view>
+    <text class="title2">充电须知</text>
+    <view>充电中插座指示灯保持红灯常亮，如果此时将电源插头拔出则视为此次充电结束，已缴纳的充电费用不予退还，再次启动充电需要重新缴纳费用（临停缴费用户、包月（不含充电）用户）。</view>
+  </view>
+  <view class="content" id="c4">
+    <view class="title1">四、扫码出车库</view>
+    <view>打开手机微信“扫一扫”或者进入大象车库小程序点击首页“扫一扫”，扫描车库出口处二维码，驶离车库。</view>
+    <image src="/images/help/1.jpg"></image>
+    <image src="/images/help/5.jpg"></image>
+  </view>
+  <view class="tip" id="c5">非机动车车辆及附件赔偿标准</view>
+  <view class="content">
+    <view class="title1">一、赔偿对象及范围：</view>
+    <view>（1）赔偿对象：在车库按规停放并正常缴费的车辆。</view>
+    <view>（2）赔偿范围：负责车辆本身和电动车电瓶。</view>
+    <view>（3）免责范围：</view>
+    <view>A、车辆自身携带的物品：如雨衣、头盔、电动车充电器及车身损伤、反光镜破损、车胎漏气，遗失或损坏，车场可调取监控协助追查。</view>
+    <view>B、未交费或者逾期交费的车辆；未按实际收费缴纳费用的车辆；车辆未上明锁的车辆；未在规定范围内停车的车辆，我公司拒绝赔偿</view>
+    <view class="title1">二、车辆遗失处理流程：</view>
+    <view>（1）车主确认车辆遗失时，请第一时间报警，由警方负责调查追赃。</view>
+    <view>（2）警方确认追赃无果或者希望渺茫时，由本车库对车主先垫付赔偿。本车库不负责车主因此产生的交通等各项费用。</view>
+    <view>（3）赔偿标准：</view>
+    <view>A、购买时间一年以内的车辆按照购入收据或者发票价格的50%赔偿。</view>
+    <view>B、购买时间两年以内的车辆按照购入收据或发票价格的30%赔偿。</view>
+    <view>C、如无法提供购车发票、行驶证等有效证件，则不予赔偿。</view>
+    <view>自行车价值高于3000元，电动车、摩托车价值高于6000元的车辆，按贵重车辆单独缴纳的，则根据车辆价值按赔付标准赔付；如未单独约定，则按照车辆类型的常规价值认定。</view>
+  </view>
+  <view class="tip" id="c6">非机动车库管理规定</view>
+  <view class="content">
+    <view>为规范本小区非机动车（含摩托车）停车秩序，为业主提供安全、整洁的停车环境，特制定本管理规定：</view>
+    <view>一、本小区的非机动车库采取24小时现场无人看守+远程看管，扫码存放的封
+    闭管理方式，一车一卡，有序停车。请停好爱车后一定将车辆锁好，支撑双脚架，离开时请随身带走车辆以外物品，提高自我保管意识，如遗失或损坏停车场概不负责。</view>
+        <view>二、请车主按照电动车、自行车、摩托车区域将您的爱车停放在规定位置。不
+    得乱停乱放。小区单元门内外、消防通道、楼道内以及小区地面路面上严禁停放非机动车辆，未按规定停放的非机动车辆造成损坏、丢失，其责任自负。</view>
+        <view>三、非机动车库安装有智能充电插座，提供电动车充电，充电完成后请自行保 管好充电器。充电器请勿放在地上，避免雨水导致漏电引发事故。</view>
+        <view>四、车主停放非机动车采取预付费制，先交费后停车，如停车未交费，造成非机动车丢失，责任自负。我方工作人员不定期在车库为非智能机用户办理月卡充值。</view>
+        <view>五、缴费标准与车型不匹配，造成非机动车丢失、损坏，责任自负。</view>
+        <view>六、请各位车主爱护车库内设施设备及保持车库内的环境卫生，不得在车库内吸烟和乱扔杂物，否则造成损失后果自负（如造成火灾，责任人需赔偿车库全部损失。</view>
+        <view>七、车库内禁止堆放与非机动车无关的物品，避免火灾；如发现无主物品立即进行清理。</view>
+        <view>八、请不要在车库内练习驾驶摩托车、自行车等非机动车辆。</view>
+        <view>九、进出非机动车库注意安全，坡道请推行、严禁骑行，否则造成安全事故均
+    由当事人负责。</view>
+        <view>十、请办理停车前仔细阅读此管理规定，如选择在车库停放车辆，则视为认可该车库管理规定</view>
+  </view>
+  
+</scroll-view>

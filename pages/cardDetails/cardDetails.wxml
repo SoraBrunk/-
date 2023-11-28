@@ -1,0 +1,98 @@
+<wxs src="../../wxs/pay.wxs" module="pay"></wxs>
+<view class="content" wx:if="{{content != ''}}">
+  <view class="mod">
+    <text>卡号：</text>
+    <text bindlongpress="copyText" data-text="{{content.orderNum}}">{{content.orderNum}}</text>
+  </view>
+  <view class="mod">    
+    <text>车辆类型：{{content.carTypeStr}}</text>
+  </view>
+  <view class="mod">
+    <text>入场：{{content.createTime}}</text>
+  </view>
+  <view class="mod">
+    <text>使用天数：{{content.useDay}}天</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr == '临时停车'}}">
+    <text>单价：￥{{pay.pay(content.unitPrice)}}</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr == '临时停车'}}">
+    <text>应缴：￥{{pay.pay(content.payable)}}</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingrTypeStr == '临时停车'}}">
+    <text>押金：￥{{pay.pay(content.originalMoney)}}</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+    <text>包月时间：{{content.months}}个月</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+    <text>剩余时间：{{ content.remainingDays }}天</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr == '包月停车充电'}}">
+    <text>本月充电剩余次数：{{content.residueDegree}}次</text>
+  </view>
+  <view class="mod" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+    <text>单月价格：￥{{pay.pay(content.unitPrice)}}</text>
+  </view>
+  <view class="mod" wx:if="{{content.cardIds}}">
+    <view>
+      <text>已绑定实体卡号：</text>
+    </view>
+    <view>
+      <view wx:for="{{content.cardIds}}"  wx:key="j" bindlongpress="copyText" data-text="{{item}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="mod pay" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+    <text>缴费金额：￥{{pay.pay(content.originalMoney)}}</text>
+    <view bindtap="pay">续费</view>
+  </view>
+</view>
+<view class="refund" wx:if="{{content != '' && content.parkingTypeStr == '临时停车'}}">
+  <text>可退金额：￥{{pay.pay(content.refundAmount)}}</text>
+  <view bindtap="refund">退卡</view>
+</view>
+
+<van-overlay show="{{ show }}">
+  <view class="wrapper">
+    <view class="block" >
+      <view class="tip_pic">
+        <image src="/images/all/ts_03.png"></image>
+      </view>
+      <view class="tip_txt">退卡后，如需再次进入车库，需要重新缴费，是否确认退卡？</view>
+      <view class="tip_btn">
+        <view bindtap="onClickHide">取消</view>
+        <view bindtap="confirm">确认</view>
+      </view>
+    </view>
+  </view>
+</van-overlay>
+
+<van-overlay show="{{ payShow }}">
+  <view class="wrapper">
+    <view class="block" >
+      <view class="showMoney">
+        <view>选择月份</view>
+        <view class="selectMonth" bindtap="monthSelect">
+          <view style="text-align:left">{{month}} 个月</view>
+          <image src="/images/down.png"></image>
+        </view>
+      </view>
+      <view class="money">￥{{pay.pay(content.unitPrice * month)}}</view>
+      <view class="tip_btn">
+        <view bindtap="payHide">取消</view>
+        <view bindtap="payMoney">确认支付</view>
+      </view>
+    </view>
+  </view>
+</van-overlay>
+
+<van-popup show="{{ showMonth }}" bind:close="monthClose" position="bottom" >
+  <van-picker 
+    visible-item-count="4"
+    columns="{{ columns }}" 
+    show-toolbar
+    title="选择月份"
+    bind:confirm="monthChoose" 
+    bind:cancel="onCancel"
+  />
+</van-popup>

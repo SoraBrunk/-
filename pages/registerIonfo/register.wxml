@@ -1,0 +1,21 @@
+<view class="middle">
+  <view>填写注册信息</view>
+  <view class="input">
+    <text>姓名：</text>
+    <input placeholder="请填写姓名" confirm-type="done" bindblur="change" data-type="1" type="text" ></input>
+  </view>
+  <view class="input">
+    <text>手机号码：</text>
+    <input placeholder="请输入手机号码" confirm-type="done" bindblur="change" data-type="2"></input>
+    <text class="code" bindtap="getMessage" wx:if="{{time == 60}}">获取验证码</text>
+    <text class="code" style="color:#e5e5e5;margin-left:60rpx" wx:else> {{time}}s</text>
+  </view>
+    <view class="input">
+    <text>手机验证码：</text>
+    <input placeholder="输入手机验证码" confirm-type="done" bindblur="change" data-type="3"></input>
+  </view>
+</view>
+<view class="tips">提示：验证码24小时内只能获取三次,请谨慎操作！</view>
+<view class="next">
+  <button open-type="getUserInfo" bindgetuserinfo="next">下一步</button>
+</view>
