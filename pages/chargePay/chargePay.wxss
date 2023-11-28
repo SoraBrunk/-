@@ -1,0 +1,144 @@
+page {
+  background: #fff;
+}
+
+.mode {
+  padding: 20rpx 0 28rpx 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.mode text {
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+}
+
+.body {
+  padding: 32rpx;
+  margin-top: 20rpx;
+}
+
+.tip {
+  color: rgba(153, 153, 153, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.btns view {
+  width: 218rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  box-shadow: 2px 2px 7px 0px rgba(213, 213, 213, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+  margin-top: 20rpx;
+}
+
+.select {
+  background-color: rgba(72, 128, 255, 1);
+  color: rgba(251, 251, 251, 1);
+  border: 1px solid rgba(72, 128, 255, 1)
+}
+
+.uselect {
+  background-color:#fff;
+  color: #222222;
+  border: 1px solid #e5e5e5
+}
+
+.pay_detail {
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.pay_money {
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+}
+
+.pay_money text {
+  color: rgba(16, 16, 16, 1);
+  font-size: 48rpx;
+  font-weight: 800;
+  font-family: PingFangSC-regular;
+}
+
+.bottom_tip {
+  padding: 0 52rpx;
+  text-align: center;
+  color: rgba(255, 84, 0, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+  margin-top: 8rpx;
+}
+
+.pay {
+  margin-top: 76rpx;
+  padding: 0 22rpx;
+}
+
+.pay view {
+  height: 92rpx;
+  border-radius: 8rpx;
+  background-color: rgba(72, 128, 255, 1);
+  box-shadow: 2px 2px 7px 0px rgba(168, 194, 255, 1);
+  border: 1px solid rgba(255, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 36rpx;
+  font-family: PingFangSC-regular;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 80rpx;
+}
+
+.block {
+  width: 100%;
+  background-color: #fff;
+  padding: 62rpx 40rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+
+.block_title {
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}
+
+.block_btn {
+  width: 260rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  background-color: rgba(72, 128, 255, 1);
+  border: 1px solid rgba(255, 0, 0, 0);
+  color: rgba(255, 255, 255, 1);
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+  margin: 40rpx auto 0;
+}

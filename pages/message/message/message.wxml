@@ -1,0 +1,153 @@
+<view class="time">{{time}}</view>
+<view class="content">
+  <view class="content_left">
+    <image src="/images/all/logo_03.png"></image>
+  </view>
+  <view class="content_right">
+  <!-- 文本 -->
+  <view wx:if="{{type == '系统消息'}}">
+    <text>213123213123213123123213213123123123123123123123123</text>
+    <text>客服电话：{{phone}}</text>
+  </view>
+  <!-- 充电 -->
+  <view wx:if="{{type == '支付消息' && orderType == 2}}">
+    <view class="title">充电通知</view>
+    <view class="body" style="display:flex">
+      <view>订单号码：</view>
+      <text selectable='true' style="margin-top:0">{{content.orderNum}}</text>
+    </view>
+    <view class="body">
+      <view>充电终端：</view>
+      <view>{{content.carBarnName}} 端口{{content.portNum + 1}}</view>
+    </view>
+    <view class="body">
+      <view>起充时间：</view>
+      <view>{{content.createAt}}</view>
+    </view>
+    <view class="body">
+      <view>停止时间：</view>
+      <view>{{content.overTime}}</view>
+    </view>
+    <view class="body">
+      <view>购买时长：</view>
+      <view>{{content.payTime / 60}}小时</view>
+    </view>
+    <view class="body">
+      <view>充电费用：</view>
+      <view>{{content.payMoney / 100}}元</view>
+    </view>
+     <view class="body">
+      <view>备注：</view>
+      <view>客服电话：{{phone}}</view>
+    </view>
+  </view>
+  <view wx:if="{{type == '充电消息'}}">
+    <view class="title" wx:if="{{remark == ''}}">充电开始通知</view>
+    <view class="title" wx:else>充电结束通知</view>
+    <view class="body" style="display:flex">
+      <view>订单号码：</view>
+      <text selectable='true' style="margin-top:0">{{content.orderNum}}</text>
+    </view>
+    <view class="body">
+      <view>充电终端：</view>
+      <view>{{content.carBarnName}} 端口{{content.portNum + 1}}</view>
+    </view>
+    <view class="body">
+      <view>起充时间：</view>
+      <view>{{content.createAt}}</view>
+    </view>
+    <view class="body" wx:if="{{remark != ''}}">
+      <view>停止时间：</view>
+      <view>{{remark.StopTime}}</view>
+    </view>
+    <view class="body" wx:if="{{remark != ''}}">
+      <view>通知原因：</view>
+      <view>{{remark.StopReason}}</view>
+    </view>
+     <view class="body">
+      <view>备注：</view>
+      <view>客服电话：{{phone}}</view>
+    </view>
+  </view>
+  <!-- 缴费 -->
+  <view wx:if="{{type == '支付消息' && orderType == 1}}">
+    <view class="title">缴费成功</view>
+    <view class="body" style="display:flex">
+      <view>订单号码：</view>
+      <text selectable='true' style="margin-top:0">{{content.orderNum}}</text>
+    </view>
+    <view class="body">
+      <view>车库名称：</view>
+      <view>{{content.carBarnName}}</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+      <view>包月时间：</view>
+      <view>{{content.months}}个月</view>
+    </view>
+    <view class="body">
+      <view>起始时间：</view>
+      <view>{{content.createTime}}</view>
+    </view>
+    <view class="body">
+      <view>费用：</view>
+      <view>{{content.originalMoney}}元</view>
+    </view>
+    <view class="body">
+      <view>备注：</view>
+      <view>客服电话：{{phone}}</view>
+    </view>
+  </view>
+  <!-- 退卡 -->
+  <view wx:if="{{type == '退款消息'}}">
+    <view class="title">退款成功</view>
+    <view class="body" style="display:flex">
+      <view>卡号：</view>
+      <text selectable='true' style="margin-top:0">{{content.orderNum}}</text>
+    </view>
+    <view class="body">
+      <view>入场：</view>
+      <view>{{content.createTime}}</view>
+    </view>
+    <view class="body">
+      <view>使用天数：</view>
+      <view>{{content.useDay}}天</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr == '临时停车'}}">
+      <view>单价：</view>
+      <view>￥{{content.unitPrice}}</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr == '临时停车'}}">
+      <view>押金：</view>
+      <view>￥{{content.originalMoney}}</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr == '临时停车'}}">
+      <view>退款金额：</view>
+      <view>￥{{content.refundAmount}}</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+      <view>包月时间：</view>
+      <view>{{content.months}}个月</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+      <view>剩余天数：</view>
+      <view>{{content.months - content.useDay}}天</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+      <view>单月价格：</view>
+      <view>￥{{content.unitPrice}}</view>
+    </view>
+    <view class="body" wx:if="{content.parkingTypeStr != '临时停车'}}">
+      <view>缴费价格：</view>
+      <view>￥{{content.originalMoney}}</view>
+    </view>
+    <view class="body" wx:if="{{content.parkingTypeStr != '临时停车'}}">
+      <view>退款金额：</view>
+      <view>￥{{content.refundAmount}}</view>
+    </view>
+    <view class="body">
+      <view>备注：</view>
+      <view>客服电话：{{phone}}</view>
+    </view>
+  </view>
+  </view>
+</view>

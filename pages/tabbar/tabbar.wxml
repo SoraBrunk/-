@@ -1,0 +1,82 @@
+<!-- <cover-view style="z-index:20"> -->
+  <van-tabbar active="{{ active }}" bind:change="onChange" style="z-index:10">
+    <van-tabbar-item>
+    <image
+        slot="icon"
+        src="/images/all/sy.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+      <image
+        slot="icon-active"
+        src="/images/all/sy1.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+    首页
+    </van-tabbar-item>
+    <van-tabbar-item >
+    <image
+        slot="icon"
+        src="/images/all/kp.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+      <image
+        slot="icon-active"
+        src="/images/all/kp1.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+    我的卡片
+    </van-tabbar-item>
+    <van-tabbar-item dot="{{message}}">
+    <image
+        slot="icon"
+        src="/images/all/wd.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+      <image
+        slot="icon-active"
+        src="/images/all/wd1.png"
+        mode="aspectFit"
+        style="width: 30px; height: 18px;"
+      />
+    个人中心
+    </van-tabbar-item>
+  </van-tabbar>
+<!-- </cover-view> -->
+<view class="content">
+  <index  wx:if="{{active == 0}}" id="ind"/>
+  <myCard  wx:if="{{active == 1}}" id="card"/>
+  <personal  wx:if="{{active == 2}}" id="person"/>
+</view>
+<van-toast id="van-toast" />
+<!-- <van-toast id="van-toast" />
+<van-popup show="{{ show }}" bind:close="onClose" custom-class="show">
+  <view class="body">
+    <view>请授权小程序</view>
+    <button open-type="getUserInfo" bindgetuserinfo="confirm">确定</button>
+  </view>
+</van-popup> -->
+<van-dialog
+  use-slot
+  title="提示"
+  show="{{ show }}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
+  bind:getuserinfo="confirm"
+> 
+  <view style="text-align:center;margin:32rpx 0">请授权小程序用户信息</view>
+</van-dialog>
+<!-- <van-dialog
+  use-slot
+  title="提示"
+  show="{{ location }}"
+  show-cancel-button
+  bind:confirm="locations"
+> 
+  <view style="text-align:center;margin:32rpx 0">请授权小程序用户地理位置</view>
+</van-dialog> -->

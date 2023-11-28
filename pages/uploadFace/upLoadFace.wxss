@@ -1,0 +1,103 @@
+page {
+  background-color: #fff;
+}
+/* 中间 */
+.main{
+  width: 100%;
+  height: 85vh;
+  background-color: #fff;
+}
+.main_title{
+  width: 92%;
+  margin: 0 auto;
+  padding: 72rpx 0 32rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #222;
+}
+
+.main::before{
+  content:'';
+  display: table
+}
+
+.main_text {
+  margin-top: 8vh;
+  text-align: center;
+}
+
+.main_text text{
+  color: rgba(255, 84, 0, 1);
+  font-size: 28rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.main_camera,.camera_circle,.middle_circle,.small_circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_camera{
+  width: 100%;
+  height: 48vh;
+}
+
+.camera_circle{
+  width: 326rpx;
+  height: 326rpx;
+  border: 1rpx solid #BBBBBB;
+  border-radius: 50%;
+}
+
+
+.cameraIcon{
+  width: 326rpx;
+  height: 326rpx;
+}
+
+.heardPic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.tip {
+  text-align: center;
+  color:#f00;
+}
+
+/* 底部 */
+.tips{
+  width: 90%;
+  margin: 0 auto;
+}
+.tips_mian{
+  padding-top: 50rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.comp{
+  width: 100% !important;
+  height: 92rpx;
+  margin: 0;
+  padding: 0;
+
+  border-radius: 8rpx;
+  background-color: rgba(189, 188, 188, 1);
+  text-align: center;
+  border: 1px solid rgba(255, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 1);
+  font-size: 36rpx;
+  font-family: PingFangSC-regular;
+}
+
+.color {
+  background-color: #4880FF !important;
+}

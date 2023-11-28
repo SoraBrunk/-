@@ -1,0 +1,53 @@
+<view class="overTime" wx:if="{{order.length > 0}}">
+  <text>可使用卡片</text>
+</view>
+<view class="card" wx:if="{{order.length > 0}}">
+  <view class="card_content" wx:for="{{order}}" wx:key="i" wx:if="{{order != ''}}">
+    <image class="background" src="/images/all/card_back.png"></image>
+    <view class="mask" bindtap="details" data-id="{{index}}" data-type="1"></view>
+    <view class="top_txt">
+      <text>智能车库 [{{item.parkingTypeStr == '临时停车'? '临时卡' : '月卡'}}]</text>
+      <!-- <text wx:if="{{item.parkingTypeStr == '临时停车'}}">余额</text> -->
+    </view>
+    <view class="cardNo">
+      <text>{{item.orderNum}}</text>
+      <!-- <text wx:if="{{item.parkingTypeStr == '临时停车'}}">￥ {{item.refundAmount}}</text> -->
+    </view>
+    <view class="time">
+      <text>{{time}}</text>
+    </view>
+    <view class="details">
+      <text>{{item.carBarnName}}</text>
+      <text wx:if="{{item.parkingTypeStr != '临时停车'}}">剩余：{{item.remainingDays}}天</text>
+    </view>
+  </view>
+</view>
+<!-- <view class="newCard">
+  <image src="/images/all/xz_03.png" bindtap="add"></image>
+  <text bindtap="add">申请月卡</text>
+</view> -->
+<view class="overTime" wx:if="{{expiredOrders.length > 0}}">
+  <text>已过期卡片</text>
+</view>
+<view class="card" wx:if="{{expiredOrders.length > 0}}">
+  <view class="card_content" wx:for="{{expiredOrders}}" wx:key="i">
+    <image class="background" src="/images/all/card_back_1.png"></image>
+    <view class="mask" bindtap="details" data-id="{{index}}" data-type="2"></view>
+    <view class="top_txt">
+      <text>智能车库 [{{item.parkingTypeStr == '临时停车'? '临时卡' : '月卡'}}]</text>
+      <!-- <text wx:if="{{item.parkingTypeStr == '临时停车'}}">余额</text> -->
+    </view>
+    <view class="cardNo">
+      <text>{{item.orderNum}}</text>
+      <!-- <text wx:if="{{item.parkingTypeStr == '临时停车'}}">￥ {{item.refundAmount}}</text> -->
+    </view>
+    <view class="time">
+      <text>{{time}}</text>
+    </view>
+    <view class="details">
+      <text>{{item.carBarnName}}</text>
+      <text wx:if="{{item.parkingTypeStr != '临时停车'}}">已过期</text>
+    </view>
+  </view>
+  <view wx:if="{{order.length == 0 && expiredOrders.lenght == 0}}" style="text-align:center">您当前未拥有任何卡片</view>
+</view>

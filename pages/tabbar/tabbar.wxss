@@ -1,0 +1,24 @@
+.show {
+  width:60%;
+  height: 25vh;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body {
+  text-align: center;
+}
+
+.body view {
+  font-size: 40rpx;
+  margin-bottom: 60rpx;
+  font-weight: bolder;
+}
+
+.body button {
+  background: rgba(72, 128, 255, 1);
+  color: #fff;
+  width: 80% !important;
+}

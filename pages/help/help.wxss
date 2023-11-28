@@ -1,0 +1,28 @@
+.back {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+#tip {
+  font-size: 45rpx;
+  font-weight: bolder;
+  padding: 30rpx 30rpx;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #F6F6F6;
+  padding: 20rpx 30rpx;
+}
+
+.content>text {
+  font-size: 30rpx;
+  color: #888;
+}
+
+.content>image {
+  width: 40rpx;
+  height: 40rpx;
+}

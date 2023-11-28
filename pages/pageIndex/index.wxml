@@ -1,0 +1,24 @@
+<official-account></official-account>
+<van-toast id="van-toast" />
+  <swiper indicator-dots="true" indicator-color="rgba(187, 187, 187, 1)" autoplay="true" interval="3000" duration="500" circular="true">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+<view class="indexText">
+  <view>大象智能车库</view>
+  <view>手机付费，扫码开门，智能充电智能化的停车系统</view>
+</view>
+<view class="scan">
+  <button bindtap="scanCode">
+    <image src="/images/all/sys.png"></image>
+    <text>扫码开门/充电</text>
+  </button>
+</view>
+<van-toast id="van-toast" />
+
+<!-- 充电logo -->
+<image wx:if="{{charge != -1}}" src="/images/all/cdz_03.png" class="charge" bindtap="charge"></image>
+

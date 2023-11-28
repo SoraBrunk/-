@@ -1,0 +1,120 @@
+page {
+  background: #fff;
+}
+
+.progress_box{
+  position: relative;
+  width: 262px;
+  height:  262px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.progress_bg{
+  position: absolute;
+  width: 262px;
+  height: 262px; 
+}
+.progress_canvas{ 
+  width: 262px;
+  height: 262px; 
+} 
+.progress_text{ 
+  width: 300rpx;
+  position: absolute; 
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.progress_info{   
+  padding-left: 20rpx;
+  letter-spacing: 2rpx;
+  margin-right: 20rpx;
+  font-size: 156rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(83,214,163,1);
+} 
+
+.progress_pro {
+  margin-top: -78rpx;
+  font-size: 48rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(83,214,163,1);
+  padding-right: 10rpx;
+}
+
+.progress_tip {
+  font-size: 36rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#999999;
+}
+
+.time {
+  margin-top: 8vh;
+  padding: 0 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.t_mode {
+  padding: 32rpx 0 40rpx 44rpx;
+  width: 248rpx;
+  background:rgba(249,250,251,1);
+}
+
+.t_mode image{
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.t_mode view:nth-child(2) {
+  margin-top: 34rpx;
+  font-size: 28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.t_mode view:last-child {
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+
+.local {
+  padding: 0 60rpx;
+  margin-top: 32rpx;
+}
+
+.local_content {
+  background:rgba(249,250,251,1);
+  padding: 32rpx 54rpx 40rpx 44rpx;
+}
+
+.local image{
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.local view:nth-child(2) {
+  margin-top: 34rpx;
+  font-size: 28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.local view:last-child {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(34,34,34,1);
+}

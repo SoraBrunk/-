@@ -1,0 +1,22 @@
+<!--pages/index/index.wxml-->
+<view class='index'>
+  <!-- 中间内容 -->
+  <view class='main'>
+    <view class='main_text'>
+      <!-- <text>请上传照片</text> -->
+    </view>
+    <view class='main_camera'>
+      <view class='camera_circle' bindtap="takePhoto">    
+            <image src="{{choosePic}}" wx:if="{{choosePic != ''}}" class="heardPic"></image>
+            <image src="/images/all/zp_04.png" wx:else class='cameraIcon'></image>
+      </view>
+    </view>
+    <view class="tip">提示：请点击按钮完成拍照操作</view>
+  </view>
+  <!-- 底部提示信息 -->
+  <view class='tips'>
+    <view class='tips_mian'>
+      <button class="comp {{color}}" bindtap="upload">完成</button>
+    </view>
+  </view>
+</view>

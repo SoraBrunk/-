@@ -1,0 +1,54 @@
+<!--pages/payAfter/payAfter.wxml-->
+<wxs src="../../wxs/pay.wxs" module="pay"></wxs>
+<view class="top">
+  <view class="top_pic">
+    <image src="/images/all/cg_03.png"></image>
+  </view>
+  <view>扫码开门成功！</view>
+  <view>如未正常开门，请扫码重试。</view>
+  <view class="tip">如果您无需再次进入车库，请在出门时扫描二维码退还
+</view>
+</view>
+<view class="content" wx:if="{{order != ''}}">
+  <view class="body">
+    <view>
+      <text>卡号：</text>
+      <text bindlongpress="copyText" data-text="{{order.orderNum}}">{{order.orderNum}}</text>
+    </view>
+    <view>
+      <text style="margin-right:30rpx">入场：{{order.createTime}}</text><text>天数：{{order.useDay}}天</text>
+    </view>
+    <view wx:if="{{type == '临时停车'}}">
+      <text style="margin-right:50rpx">单价：￥{{pay.pay(order.unitPrice)}}</text><text>已缴：￥{{pay.pay(order.payable)}}</text>
+    </view>
+    <view wx:if="{{type != '临时停车'}}">
+      <text>包月时间：{{order.months}}个月</text>
+    </view>
+    <view wx:if="{{type != '临时停车'}}">
+      <text>单月价格：￥{{pay.pay(order.unitPrice)}}</text>
+    </view>
+    <view wx:if="{{type != '临时停车'}}">
+      <text>缴费金额：￥{{pay.pay(order.originalMoney)}}</text>
+    </view>
+  </view>
+  <view class="refund" wx:if="{{type == '临时停车'}}">
+    <text>可退金额：￥{{pay.pay(order.refundAmount)}}</text>
+    <view bindtap="refund">退卡</view>
+  </view>
+</view>
+
+<!-- 遮罩层 -->
+<van-overlay show="{{ show }}">
+  <view class="wrapper">
+    <view class="block" >
+      <view class="tip_pic">
+        <image src="/images/all/ts_03.png"></image>
+      </view>
+      <view class="tip_txt">退卡后，如需再次进入车库，需要重新缴费，是否确认退卡？</view>
+      <view class="tip_btn">
+        <view bindtap="onClickHide">取消</view>
+        <view bindtap="confirm">确认</view>
+      </view>
+    </view>
+  </view>
+</van-overlay>

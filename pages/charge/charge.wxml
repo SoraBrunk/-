@@ -1,0 +1,32 @@
+ <wxs src="../../wxs/charge.wxs" module="charge"></wxs>
+ <wxs src="../../wxs/pay.wxs" module="pay"></wxs>
+ <view class="container">
+  <view class='progress_box'>
+      <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas> 
+      <canvas class="progress_canvas"   canvas-id="canvasProgress">  </canvas> 
+      <view class="progress_text">
+          <text class='progress_info'> {{charge.num(content.chargeTime / content.payTime)}}</text>
+          <text class="progress_pro">%</text>
+          <text class="progress_tip">{{charge.time(content.chargeTime / 60)}}/{{content.payTime / 60}}h</text>
+      </view>
+  </view>
+</view>
+<view class="time">
+ <view class="t_mode">
+    <image src="/images/all/sj.png"></image>
+    <view>购买充电时间</view>
+    <view>{{content.payTime / 60}}小时</view>
+ </view>
+ <view class="t_mode">
+    <image src="/images/all/fy.png"></image>
+    <view>支付费用</view>
+    <view>￥{{pay.pay((content.payMoney))}}</view>
+ </view>
+</view>
+ <view class="local">
+    <view class="local_content">
+      <image src="/images/all/dz.png"></image>
+      <view>车库充电终端</view>
+      <view>{{content.carBarnName}} {{content.deviceSN}}号终端</view>
+    </view>
+ </view>

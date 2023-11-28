@@ -1,0 +1,104 @@
+<wxs src="../../wxs/pay.wxs" module="pay"></wxs>
+<view wx:if="{{search == 1}}">
+  <view >
+    <view class="local" bindtap="search">
+      <view class="local_tip">
+        <text>小区名称</text>
+        <text>{{location}}</text>
+      </view>
+      <image src="/images/right.png"></image>
+    </view>
+    <view class="month">
+      <view class="cardchoose">
+        <view class="cardtype">卡片类型</view>
+        <view class="card_content">
+          <view class="card_btn">
+            <view class="{{card[0]}}">电子卡</view>
+            <view class="{{card[1]}}">实体卡</view>
+          </view>
+          <view class="card_tip">本车库已支持扫码开门，可无需办理实体卡</view>
+        </view>
+      </view>
+      <view class="select_car">
+        <view class="stitle">车辆类型</view>
+        <view class="stype" bindtap="selectcar">
+          <text>{{car}}</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view>
+      <view class="select_car">
+        <view class="stitle">包月时间</view>
+        <view class="stype" bindtap="time">
+          <text>{{time}}</text>
+          <image src="/images/right.png"></image>
+        </view>
+      </view>
+      <view class="input_group">
+        <view style="text-align-last:justify;text-align:justify">房号</view>
+        <view>
+          <input placeholder="请输入房号(必填)" onblur="home_code"></input>
+        </view>
+      </view>
+      <view class="input_group">
+        <view>品牌型号</view>
+        <view>
+          <input placeholder="请输车辆品牌型号(必填)" onblur="car_type"></input>
+        </view>
+      </view>
+      <view class="rule">
+        <checkbox id="argee" color="#fff" bindtap="state" checked="{{disabled}}"></checkbox>
+        <text class="tips">我已仔细阅读<text>《停车场管理规定》</text>、<text>《车库赔偿标注》</text>、《收费标准》，并认可上述条款。</text>
+      </view>
+    </view>
+  </view>
+  <view class="month_price">
+    <view class="total">
+      <text class="total_price">合计：<text wx:if="{{content != ''}}">{{pay.pay(month * content.ruleVos[4].amounts[car_index])}}</text> 元</text>
+    </view>
+    <view>（包月单价:{{content.ruleVos[4].amounts[car_index]}}元/月）</view>
+  </view>
+  <view class="submit">
+    <button bindtap="pay" >确认支付</button>
+  </view>
+  <!-- 弹出层 -->
+<van-popup
+  show="{{ carshow }}"
+  position="bottom"
+  bind:close="onClose"
+>
+  <view class="title">请选择车辆类型</view>
+  <radio-group bindchange="car_change">
+        <radio wx:for="{{content.ruleVos[1].carTypes}}" value="{{item}}" wx:key="i" data-select="{{index}}" checked="{{car_index == index}}">
+        <text>{{item}}</text>
+      </radio>
+  </radio-group>
+</van-popup>
+
+<van-popup
+  show="{{ timeshow }}"
+  position="bottom"
+  bind:close="timeClose"
+>
+  <view class="title">请选择包月时间</view>
+  <radio-group bindchange="time_change">
+        <radio wx:for="{{time_content}}" value="{{item}}" wx:key="i" data-select="{{index}}" checked="{{time_index == index}}">
+        <text>{{item}}</text>
+      </radio>
+  </radio-group>
+</van-popup>
+</view>
+<!-- 搜索 -->
+<view wx:if="{{search == 2}}">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    bind:change="onSearch"
+    focus="true"
+    bind:blur="onblur"
+    bind:search="onSearch"
+  />
+  <view class="search_content">
+    <view class="search_txt" wx:for="{{search_txt}}" wx:key="i" wx:if="{{search_txt != ''}}" bindtap="confirm" data-content="{{item.estateName}} {{item.carBarnName}}" data-id="{{item.carBarbId}}" data-index="{{index}}">{{item.estateName}} {{item.carBarnName}}</view>
+  </view> 
+</view>
+

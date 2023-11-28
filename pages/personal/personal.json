@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  },
+      "backgroundColor": "#F6F6F6",
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#4880FF",
+      "navigationBarTitleText": "个人中心",
+      "navigationBarTextStyle": "black",
+      "component": true
+}

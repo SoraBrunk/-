@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="input" >
+    <text>姓名：</text>
+    <input value="{{name}}" bindblur="change" data-id="0"></input>
+  </view>
+  <view class="input" >
+    <text>手机：</text>
+    <input value="{{phone}}" bindblur="change" data-id="1"></input>
+    <text class="code" bindtap="getMessage" wx:if="{{time == 60}}">获取验证码</text>
+    <text class="code" style="color:#e5e5e5;margin-left:60rpx" wx:else> {{time}}s</text>
+  </view>
+  <view class="input" >
+    <text>验证码：</text>
+    <input bindblur="change" data-id="2"></input>
+  </view>
+  <view class="reset_pic">
+    <view class="pic_top">
+      <view class="pic_title">照片：</view>
+      <view class="pic">
+        <image src="{{pic}}"></image>
+      </view>
+    </view>
+    <view class="re_upload" bindtap="reup">重新上传</view>
+  </view>
+</view>
+<view class="confirm">
+  <view bindtap="save">保存</view>
+</view>

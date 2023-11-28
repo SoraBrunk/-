@@ -1,0 +1,121 @@
+/* pages/mayCard/myCard.wxss */
+page {
+  background: #fff;
+}
+
+.card {
+  margin-top: 20rpx;
+  padding: 0 50rpx;
+}
+
+.card_content {
+  border-radius: 16rpx;
+  padding: 32rpx 70rpx 56rpx 32rpx;
+  /* box-shadow: 0px 2px 6px 0px rgba(168, 194, 255, 1); */
+  border: 1px solid rgba(213, 213, 213, 0);
+  color: rgba(251, 251, 251, 1);
+  font-family: PingFangSC-regular;
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.top_txt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.top_txt text:first-child {
+  font-size: 40rpx !important;
+  font-weight: bold !important;
+}
+
+.top_txt text:last-child {
+  font-size: 28rpx;
+  font-weight:500;
+}
+
+.cardNo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.cardNo text:first-child{
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.cardNo text:last-child{
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.time {
+  height: 26rpx;
+  margin-top: 20rpx;
+}
+
+.time text{
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.details {
+  margin-top: 78rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details text {
+  font-size: 28rpx;
+  font-weight: 500;
+
+}
+
+.newCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 72rpx;
+  margin-bottom: 180rpx;
+}
+
+.newCard image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx
+}
+
+.newCard text {
+  color: rgba(72, 128, 255, 1);
+  font-size: 36rpx;
+  font-family: PingFangSC-regular;
+}
+
+.overTime {
+  margin: 20rpx 0 20rpx 40rpx;
+  text-align: left;
+  font-weight: bolder;
+}
